@@ -1,0 +1,20 @@
+body {
+  nav {
+    .main-navigation {
+      a {
+        color: #fff;
+        border: none;
+        text-shadow: rgba(0, 0, 0, 0.5) 0 1px;
+
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+    
+    input.search {
+      background-color: #fff;
+    }
+  }
+  
+}

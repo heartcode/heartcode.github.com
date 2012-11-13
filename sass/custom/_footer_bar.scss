@@ -1,0 +1,22 @@
+body > footer {
+  color: #fff;
+  background-color: #bb0753;
+  background: url('/images/noise.png'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e5065a), color-stop(50%, #bb0753), color-stop(100%, #8f024e));
+  background: url('/images/noise.png'), -webkit-linear-gradient(#e5065a,#bb0753,#8f024e);
+  background: url('/images/noise.png'), -moz-linear-gradient(#e5065a,#bb0753,#8f024e);
+  background: url('/images/noise.png'), -o-linear-gradient(#e5065a,#bb0753,#8f024e);
+  background: url('/images/noise.png'), -ms-linear-gradient(#e5065a,#bb0753,#8f024e);
+  background: url('/images/noise.png'), linear-gradient(#e5065a,#bb0753,#8f024e);
+
+  text-shadow: rgba(0, 0, 0, 0.5) 0 1px;
+  border-top: none;
+
+  a:link,
+  a:active,
+  a:visited {
+    color: #fff;
+  }
+  a:hover {
+    color: #000;
+  }
+}

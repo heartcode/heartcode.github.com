@@ -1,0 +1,10 @@
+body {
+  .blog-index,
+  #blog-archives {
+    article {
+      h1 a:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

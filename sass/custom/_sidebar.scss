@@ -1,0 +1,56 @@
+body {
+  aside.sidebar {
+    ul#goodies {
+        margin-top: 0.3em;
+      }
+    li {
+      @include box_shadow(none);
+      border: none;
+    }
+    a {
+      white-space: nowrap;
+
+      .goodies-label {
+        display: block;
+        margin-bottom: 0.3em;
+      }
+
+      &#stackoverflow {
+        display: block;
+        margin-top: 0.7em;
+      }
+    }
+
+    ul#coderwall {
+      border: none;
+      margin-top: 0.5em;
+
+      li {
+        display: inline-block;
+        margin: 0.3em 0.3em 0 0;
+        padding: 0;
+        width: 70px;
+        height: 70px;
+        background: #fff;
+        @include border_radius(0.3em);
+        @include box_shadow(rgba(0,0,0,0.15) 0 1px 4px);
+
+        img {
+          width: 100%;
+          height: auto;
+          box-shadow: none;
+          border: none;
+
+          @include border_radius(0);
+          @include hw_accelerate;
+          @include transform(scale(0.8));
+          @include transition_transform(60ms);
+        }
+        &:hover img {
+          @include transform(scale(1));
+          
+        }
+      }
+    }
+  }
+}

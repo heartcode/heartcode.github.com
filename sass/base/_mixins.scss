@@ -1,0 +1,14 @@
+@mixin hw_accelerate {
+  -webkit-transform: translateZ(0) translate3D(0,0,0);
+  -moz-transform: translateZ(0) translate3D(0,0,0);
+  -o-transform: translateZ(0) translate3D(0,0,0);
+  -ms-transform: translateZ(0) translate3D(0,0,0);
+  transform: translateZ(0) translate3D(0,0,0);
+}
+
+@mixin transition_transform ($transition) {
+  -webkit-transition: $transition -webkit-transform;
+  -moz-transition: $transition -moz-transform;
+  -o-transition: $transition -o-transform;
+  transition: $transition transform;
+}
