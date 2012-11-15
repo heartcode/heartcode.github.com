@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>The Heartcode blog is back - Heartcode Blog</title>
+  <title>Fixing the trailing slash issue in the invalid Chrome extension manifest file - Heartcode Blog</title>
   <meta name="author" content="Robert Pataki">
 
   
-  <meta name="description" content="It&#8217;s been almost a year ago since I&#8217;ve started the Heartcode Blog. I&#8217;ve wanted it to be my personal journal for writing about my &hellip;">
+  <meta name="description" content="The other day I had some spare time and I thought it was a great opportunity to do some JavaScript code refactoring on my Fontier Chrome extension. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://heartcode.github.com/blog/2012/03/18/the-heartcode-blog-is-back">
+  <link rel="canonical" href="http://heartcode.github.com/blog/2012/11/15/fixing-the-trailing-slash-issue-in-the-invalid-chrome-extension-manifest-file">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -86,7 +86,7 @@
   
   <header>
     
-      <h1 class="entry-title">The Heartcode Blog Is Back</h1>
+      <h1 class="entry-title">Fixing the Trailing Slash Issue in the Invalid Chrome Extension Manifest File</h1>
     
     
       <p class="meta">
@@ -102,7 +102,7 @@
   
 
 
-<time datetime="2012-03-18T16:01:00+00:00" pubdate data-updated="true">Mar 18<span>th</span>, 2012</time>
+<time datetime="2012-11-15T23:45:00+00:00" pubdate data-updated="true">Nov 15<span>th</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -111,24 +111,81 @@
   </header>
 
 
-<div class="entry-content"><p><a href="/blog/2012/03/18/the-heartcode-blog-is-back/"><img src="/images/posts/the-heartcode-blog-is-back/heartcode-blog-octopress.png" width="789" height="335" title="The Heartcode Blog is now running under Octopress" alt="Green heartcode monster and Octopress-puss"></a></p>
+<div class="entry-content"><p><a href="/blog/2012/11/15/fixing-the-trailing-slash-issue-in-the-invalid-chrome-extension-manifest-file/"><img src="/images/posts/fixing-the-trailing-slash-issue-in-the-invalid-chrome-extension-manifest-file/fixing-the-trailing-slash-issue-in-the-invalid-chrome-extension-manifest-file.png" width="789" height="443" title="Trailing slash" alt="Trailing slash"></a></p>
 
-<p>It&#8217;s been almost a year ago since I&#8217;ve started the Heartcode Blog. I&#8217;ve wanted it to be my personal journal for writing about my journey from being a Flash Developer switching towards Front-End development, whilst trying new and exciting methods and technologies. I have to admit that beside the daily work and personal projects I&#8217;ve been working on it&#8217;s been quite difficult to write quality stuff and I didn&#8217;t want to post things just for the sake of posting.</p>
+<p>The other day I had some spare time and I thought it was a great opportunity to do some JavaScript code refactoring on my <a href="https://chrome.google.com/webstore/detail/fontier/dkbamaalakfhckcidgiigdinhcncaeae">Fontier Chrome extension</a>. The refactoring process didn’t take a long time, because the application itself is very simple. I tested the new version of the add-on in the newest <strong>Chrome (Version 23.0.1271.64)</strong> and in <strong>Canary (Version 25.0.1325.0 canary)</strong> and after seeing that it worked fine in both, I decided to update the extension in the Chrome Web Store.</p>
 
-<!--more-->
+<p>After I finished refactoring my extension code I logged in to my Developer Dashboard and I updated the extension using the ZIP upload tool. When I was done with the update I removed the 0.3 version of Fontier from my Chrome and I went to the Chrome Store to install the new version. For some reason Chrome didn&#8217;t let me install the extension :)</p>
 
+<p>When I hit the &#8216;Add to Chrome&#8217; button, the following error message popped up under the address bar:</p>
 
-<p>One morning - pretty much at the same time when my <a href="http://heartcode.robertpataki.com/canvasloader" target="_blank">CanvasLoader Creator</a> page went live, our server gave up on traffic and the blog quietly died. Ever since I didn&#8217;t feel like blogging until now.</p>
+<blockquote><p>&#8220;Package is invalid. Details: &#8216;Illegal path (absolute or relative with &#8216;..&#8217;): &#8216;/img/icon_48.png&#8221;.</p></blockquote>
 
-<p>Instead of writing posts I have read a few very interesting <a href="http://pinterest.com/robertpataki/books-worth-reading/" target="_blank">books</a> and <a href="http://pinterest.com/robertpataki/articles-worth-reading/" target="_blank">articles</a>, I worked on a couple of exciting projects at <a href="http://waste-creative.com" target="_blank">Waste Creative</a>, and I also kept working on my personal projects including the <a href="http://github.com/heartcode/CanvasLoader" target="_blank">Heartcode CanvasLoader</a>, Claire&#8217;s <a href="http://bubblegraphics.com" target="_blank">new portfolio site</a>, <a href="http://robertpataki.com" target="_blank">my portfolio site</a>, and a JavaScript tutorial for <a href="http://heartcode.robertpataki.com/360-image-slider/" target="_blank">.Net Magazine (issue #224)</a>. Long story short I did loads of things, but blogging wasn&#8217;t one of them.</p>
+<h2>But that worked before&#8230;</h2>
 
-<p>This year I am looking forward to more exciting times than ever. After being a Flash developer for more than 9 years I decided to give it up as a full time occupation and I soon will start working as a full time Front-End Developer at a very cool company called <a href="http://unboxedconsulting.com" target="_blank">Unboxed Consulting</a>, who are using Agile and TDD to deliver robust web applications. It is going to be a big challenge to catch up with the guys in all these things I&#8217;ve never done before, but it&#8217;s really looking forward to it :)</p>
+<p>Fair enough, I thought I broke the <strong>manifest.json</strong> file. I was sure that apart from increasing the &#8216;version&#8217; from &#8216;0.3&#8217; to &#8216;0.4&#8217; I didn&#8217;t change anything, but I quickly scanned through the manifest to make sure everything was alright. Esentially everything was the same as it was before:</p>
 
-<p>After riding on the back of the ActionScript wild horse for ages, I will do completely different stuff such as Ruby, HTML, JS and CSS and loads of other things, which I am truly excited about. And this is my main initiative why I want to (re)start blogging. I want to share my thoughts about Front-End Development, and about my way towards being a better developer.</p>
+<pre><code>{
+  "name": "Fontier",
+  "version" : "0.4",
+  "minimum_chrome_version": "22.0.1229.79",
+  "manifest_version": 2,
+  "description" : "The quickest way to change the default font size in Chrome. Great for testing Responsive websites using em and percentage units.",
+  "permissions": ["fontSettings"],
+  "icons": {
+    "16": "/img/icon_16.png",
+    "48": "/img/icon_48.png",
+    "128": "/img/icon_128.png"
+  },
+  "browser_action": {
+    "default_icon": "/img/icon_48.png",
+    "default_popup": "/html/popup.html"
+  },
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
+}
+</code></pre>
 
-<p>To give things a fresh start, I started using <a href="http://octopress.org" target="_blank">Octopress</a> to replace the good old <a href="http://wordpress.org" target="_blank">Wordpress</a> engine. It looks like a really friendly and awesome tool to use, it is also very well documented. Without having much experience with Ruby I&#8217;ve found it pretty straightforward to set up, and so far it does the job perfectly.</p>
+<p>Obviously I triple checked the path of the icon files, but I couldn&#8217;t see anything wrong with them, so I Googled the error message, and I&#8217;d found this <a href="https://groups.google.com/a/chromium.org/forum/?fromgroups=#!topic/chromium-extensions/4BSWseDPjZM">Google Groups thread</a>. So it seemed that I wasn&#8217;t the only one with this problem. It looked like that something had changed in Chrome and it no longer liked the paths of the icons. The strange thing was that I couldn&#8217;t find anything about any relevant changes in the API <a href="http://developer.chrome.com/extensions/manifest.html#icons">documentation</a> either.</p>
 
-<p>I just realised that I already have started doing some Ruby coding with Octopress. Wicked :)</p>
+<p>I guess your first bet is to remove the trailing slash from the paths, and you&#8217;re absoutely right! That was my first thing to do, but for some reason, when I updated the extension, it still didn&#8217;t work. From that point I spent long hours of changing-zipping-uploading the extension but it kept throwing the error messages telling me that the manifest file was somewhat broken. After about 4 hours of trying I gave up… I thought it was probably Chrome being funny and I really had to wait until a new version comes out.</p>
+
+<h2>The &#8216;painful&#8217; aha moment</h2>
+
+<p>I just couldn&#8217;t let it go that easy :) The next day I spent another couple of hours of investigating the issue and I found that whenever one updates an extension, the old version gets cached for quite some time. It was a pretty painful lighbulb moment…</p>
+
+<p>So I went back to my very initial idea of removing that cheeky trailing slash from every single file path in the manifest file and when I updated the extension I took my time and let the server to take its time as well… After about 5 minutes I saw that the very recent version showed up in the <a href="https://chrome.google.com/webstore/detail/fontier/dkbamaalakfhckcidgiigdinhcncaeae/details">Details panel</a> and when I hit the &#8216;Add to Chrome&#8217; button, it worked!</p>
+
+<p>I genuinely felt stupid for not taking the server caching into consideration, but at the same time I was super happy that eventually Fontier was back to action :)</p>
+
+<p>So, just for your record, here is the new <strong>manifest.json</strong> file whithout any trailing slashes:</p>
+
+<pre><code>{
+  "name": "Fontier",
+  "version" : "0.4",
+  "minimum_chrome_version": "22.0.1229.79",
+  "manifest_version": 2,
+  "description" : "The quickest way to change the default font size in Chrome. Great for testing Responsive websites using em and percentage units.",
+  "permissions": ["fontSettings"],
+  "icons": {
+    "16": "img/icon_16.png",
+    "48": "img/icon_48.png",
+    "128": "img/icon_128.png"
+  },
+  "browser_action": {
+    "default_icon": "img/icon_48.png",
+    "default_popup": "html/popup.html"
+  },
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
+}
+</code></pre>
+
+<h2>Lesson learnt</h2>
+
+<p>So it turned out that it indeed was the trailing slash. I figure that something has changed in the extension packager and it no longer lets developers to use the trailing slash in file name paths - which is completely fine. The only problem whith that is that it is not documented and it turns out accidentally :) Luckily the problem wasn&#8217;t a biggy, so it was pretty easy to sort.</p>
+
+<p>I actually made the problem worse by not counting with the server caching and not checking the version numbers properly.</p>
+
+<p>That tought me a damn good lesson of patience and to listen a bit more carefully to the tools that I use.</p>
 </div>
 
 
@@ -151,12 +208,12 @@
   
 
 
-<time datetime="2012-03-18T16:01:00+00:00" pubdate data-updated="true">Mar 18<span>th</span>, 2012</time>
+<time datetime="2012-11-15T23:45:00+00:00" pubdate data-updated="true">Nov 15<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/blog/'>Blog</a>
+    <a class='category' href='/blog/categories/chrome/'>Chrome</a>, <a class='category' href='/blog/categories/javascript/'>JavaScript</a>, <a class='category' href='/blog/categories/extension/'>extension</a>, <a class='category' href='/blog/categories/refactoring/'>refactoring</a>
   
 </span>
 
@@ -165,7 +222,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://heartcode.github.com/blog/2012/03/18/the-heartcode-blog-is-back/" data-via="iHeartcode" data-counturl="http://heartcode.github.com/blog/2012/03/18/the-heartcode-blog-is-back/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://heartcode.github.com/blog/2012/11/15/fixing-the-trailing-slash-issue-in-the-invalid-chrome-extension-manifest-file/" data-via="iHeartcode" data-counturl="http://heartcode.github.com/blog/2012/11/15/fixing-the-trailing-slash-issue-in-the-invalid-chrome-extension-manifest-file/" >Tweet</a>
   
   
   
@@ -176,8 +233,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2012/03/27/doing-less-right/" title="Previous Post: Doing LESS right using compilers">&laquo; Doing LESS right using compilers</a>
       
-        <a class="basic-alignment right" href="/blog/2012/03/27/doing-less-right/" title="Next Post: Doing LESS right using compilers">Doing LESS right using compilers &raquo;</a>
       
     </p>
   </footer>
@@ -280,8 +337,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://heartcode.github.com/blog/2012/03/18/the-heartcode-blog-is-back/';
-        var disqus_url = 'http://heartcode.github.com/blog/2012/03/18/the-heartcode-blog-is-back/';
+        var disqus_identifier = 'http://heartcode.github.com/blog/2012/11/15/fixing-the-trailing-slash-issue-in-the-invalid-chrome-extension-manifest-file/';
+        var disqus_url = 'http://heartcode.github.com/blog/2012/11/15/fixing-the-trailing-slash-issue-in-the-invalid-chrome-extension-manifest-file/';
         var disqus_script = 'embed.js';
       
     (function () {
