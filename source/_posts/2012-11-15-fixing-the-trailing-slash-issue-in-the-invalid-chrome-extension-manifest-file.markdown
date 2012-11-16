@@ -10,6 +10,7 @@ categories: JavaScript refactoring Chrome extension
 The other day I had some spare time and I thought it was a great opportunity to do some JavaScript code refactoring on my [Fontier Chrome extension](https://chrome.google.com/webstore/detail/fontier/dkbamaalakfhckcidgiigdinhcncaeae). The refactoring process didn’t take a long time, because the application itself is very simple. I tested the new version of the add-on in the newest **Chrome (Version 23.0.1271.64)** and in **Canary (Version 25.0.1325.0 canary)** and after seeing that it worked fine in both, I decided to update the extension in the Chrome Web Store.
 
 After I finished refactoring my extension code I logged in to my Developer Dashboard and I updated the extension using the ZIP upload tool. When I was done with the update I removed the 0.3 version of Fontier from my Chrome and I went to the Chrome Store to install the new version. For some reason Chrome didn't let me install the extension :)
+<!--more-->
 
 When I hit the 'Add to Chrome' button, the following error message popped up under the address bar:
 
