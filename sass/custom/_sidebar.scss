@@ -1,5 +1,18 @@
 body {
   aside.sidebar {
+    .clean_image {
+      border: none;
+      @include box_shadow(none);
+    }
+    .vitamin-r_link {
+      display: inline-block;
+      margin-top: 1em;
+      float: left;
+      p {
+        margin-top: 1em;
+        margin-left: 0.5em;
+      }
+    }
     ul#goodies {
         margin-top: 0.3em;
       }
